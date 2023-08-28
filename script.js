@@ -10,6 +10,10 @@ function getComputerChoice() {
     return(choices[x]);
 }
 
+function getInput () {
+    let input = prompt("Rock Paper Scissors!")
+    return(input)
+}
 function playerSelection(input, computer) {
     let player = input.toLowerCase();
     let win;
@@ -68,4 +72,11 @@ function playerSelection(input, computer) {
     }
     console.log(win);
     return win;
+}
+function game(){
+    let input = getInput();
+    let computer = getComputerChoice();
+    let win = playerSelection(input, computer);
+    console.log(win)
+    return(win)
 }
