@@ -8,9 +8,24 @@
 </head>
 <body>
     <script> 
-        let y = getComputerChoice() 
-        let x = prompt("Rock Paper Scissors!")
-        playerSelection(x, y)
+        const rounds = [1,2,3,4,5];
+        let pscore = 0;
+        let cscore = 0;
+        for (let i = 0; i < rounds.length; i++) {
+            let point = game()
+            switch (point) {
+                case true:
+                    pscore += 1;
+                    break;
+                case false:
+                    cscore += 1;
+                    break;
+                case undefined:
+                    console.log("No point!")
+            }
+            console.log("Player: "+pscore)
+            console.log("Computer: "+cscore)
+        }
     </script>
 </body>
 </html>
