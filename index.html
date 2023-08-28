@@ -21,10 +21,20 @@
                     cscore += 1;
                     break;
                 case undefined:
-                    console.log("No point!")
+                    console.log("No point!");
+                    break;
             }
             console.log("Player: "+pscore)
             console.log("Computer: "+cscore)
+        }
+        if (pscore > cscore) {
+            console.log("You win!!!!!!!");
+        }
+        else if (cscore > pscore) {
+            console.log("You lose :()");
+        }
+        else {
+            console.log("It's a tie! It's a boy!")
         }
     </script>
 </body>
