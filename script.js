@@ -8,18 +8,18 @@ function getComputerChoice() {
     console.log(x);
     console.log(choices[x]);
     return(choices[x]);
-}
+};
 
 function getInput () {
-    let input = prompt("Rock Paper Scissors!")
-    return(input)
-}
+    let input = prompt("Rock Paper Scissors!");
+    return(input);
+};
 function playerSelection(input, computer) {
     let player = input.toLowerCase();
     let win;
     if (computer.includes("Rock") ) {
         if (player.includes("rock")) {
-           
+            win = undefined;
         }
         else if (player.includes("paper")) {
             win = true;
@@ -36,7 +36,7 @@ function playerSelection(input, computer) {
             win = false;
         }
         else if (player.includes("paper")) {
-            
+            win = undefined;
         }
         else if (player.includes("scissor")) {
             win = true;
@@ -53,30 +53,28 @@ function playerSelection(input, computer) {
             win = true;
         }
         else if (player.includes("scissor")) {
-            
+            win = undefined;
         }
         else {
             console.log("Invalid")
         }
     }
-    switch (win) {
-        case undefined:
-            console.log("Oops! Try Again!");
-            break;
-        case true:
-            console.log("You win! "+player+" beats "+computer);
-            break;
-        case false:
-            console.log("You lose! "+computer+" beats "+player);
-            break;
-    }
-    console.log(win);
     return win;
-}
-function game(){
+};
+function game(pscore,cscore){
     let input = getInput();
     let computer = getComputerChoice();
     let win = playerSelection(input, computer);
-    console.log(win)
-    return(win)
+    switch (win) {
+        case undefined:
+            break;
+        case true:
+            pscore += 1;
+            break;
+        case false:
+            cscore += 1;
+            break;
+    };
+    return [pscore, cscore]
 }
+
