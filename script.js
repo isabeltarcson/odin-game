@@ -1,3 +1,17 @@
+let pscore = 0;
+let cscore = 0;
+const scores = [pscore, cscore];
+
+const rbutton = document.getElementById("rock");
+const pbutton = document.getElementById("paper");
+const sbutton = document.getElementById("scissor");
+
+let playerScore = document.getElementById("pscore");
+let puterScore = document.getElementById("cscore");
+
+console.log(playerScore)
+
+
 function getComputerChoice() {
     const rock = "Rock";
     const paper = "Paper";
@@ -11,7 +25,6 @@ function getComputerChoice() {
 };
 
 function getInput () {
-    let input = prompt("Rock Paper Scissors!");
     return(input);
 };
 function playerSelection(input, computer) {
@@ -61,20 +74,53 @@ function playerSelection(input, computer) {
     }
     return win;
 };
-function game(pscore,cscore){
-    let input = getInput();
+function game(scores, button){
+    console.log(button)
+    let input = String(button);
     let computer = getComputerChoice();
     let win = playerSelection(input, computer);
     switch (win) {
         case undefined:
             break;
         case true:
-            pscore += 1;
+            scores[0] += 1;
             break;
         case false:
-            cscore += 1;
+            scores[1] += 1;
             break;
     };
-    return [pscore, cscore]
-}
+    if (scores[0] > scores[1]) {
+        console.log("You win!!!!!!!");
+    }
+    else if (scores[0] < scores[1]) {
+        console.log("You lose :()");
+    }
+    else {
+        console.log("It's a tie! It's a boy!");
+    }
+    
+    return scores;
+};
+
+rbutton.onclick = function () {
+    let score = game(scores, rbutton.id);
+    playerScore.textContent = scores[0];
+    puterScore.textContent = scores[1];
+    console.log(scores, score);
+
+};
+sbutton.onclick = function () {
+    let score = game(scores, sbutton.id);
+    playerScore.textContent = scores[0];
+    puterScore.textContent = scores[1];
+    console.log(scores, score);
+
+};
+pbutton.onclick = function () {
+    let score = game(scores, pbutton.id);
+    playerScore.textContent = scores[0];
+    puterScore.textContent = scores[1];
+    console.log(scores, score);
+
+};
 
