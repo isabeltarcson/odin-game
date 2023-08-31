@@ -1,0 +1,54 @@
+body {
+    background: purple;
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+}
+.button {
+    border: 3px solid pink;
+    background: pink;
+    font-size: 8vw;
+    border-radius: 10px;
+    transition: color 0.09s;
+}
+.clicked {
+    transform: 1.1;
+    background:#db9ea8;
+}
+
+.scores, .titles{
+    display: flex;
+    justify-content: center;
+    gap: 15vw;
+    
+    
+   
+}
+
+.score {
+    text-align: center;
+    width: 200px;
+    border: 3px dashed pink;
+    border-radius: 10px;
+    font-size: 4vw;
+}
+
+#pscore, #cscore {
+    text-align: center;
+    width: 200px;
+    font-size: 5vw;
+    text-shadow: .1vw .1vw  pink, -.1vw -.1vw  pink;
+
+    
+
+}
+
+#result {
+    text-align: center;
+    font-size: 10vw;
+    color: red;
+}
+
+

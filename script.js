@@ -5,6 +5,7 @@ const scores = [pscore, cscore];
 const rbutton = document.getElementById("rock");
 const pbutton = document.getElementById("paper");
 const sbutton = document.getElementById("scissor");
+const result = document.getElementById("result");
 
 let playerScore = document.getElementById("pscore");
 let puterScore = document.getElementById("cscore");
@@ -89,38 +90,70 @@ function game(scores, button){
             scores[1] += 1;
             break;
     };
-    if (scores[0] > scores[1]) {
-        console.log("You win!!!!!!!");
-    }
-    else if (scores[0] < scores[1]) {
-        console.log("You lose :()");
-    }
-    else {
-        console.log("It's a tie! It's a boy!");
-    }
-    
+    if (scores[0] == 5 || scores[1] == 5) winner(scores);
     return scores;
 };
 
 rbutton.onclick = function () {
-    let score = game(scores, rbutton.id);
-    playerScore.textContent = scores[0];
-    puterScore.textContent = scores[1];
-    console.log(scores, score);
+    if (scores[0] == 5 || scores[1] == 5) {
+        
+    }
+    else {
+        rbutton.classList.add('clicked')
+        let score = game(scores, rbutton.id);
+        playerScore.textContent = scores[0];
+        puterScore.textContent = scores[1];
+        console.log(scores, score);
+        window.setTimeout(() => {rbutton.classList.remove("clicked")}, "200")
+    }
 
 };
 sbutton.onclick = function () {
-    let score = game(scores, sbutton.id);
-    playerScore.textContent = scores[0];
-    puterScore.textContent = scores[1];
-    console.log(scores, score);
+    if (scores[0] == 5 || scores[1] == 5) {
+        
+    }
+    else {
+        sbutton.classList.add('clicked')
+        let score = game(scores, sbutton.id);
+        playerScore.textContent = scores[0];
+        puterScore.textContent = scores[1];
+        console.log(scores, score);
+        window.setTimeout(() => {sbutton.classList.remove("clicked")}, "200")
+    }
 
 };
 pbutton.onclick = function () {
-    let score = game(scores, pbutton.id);
-    playerScore.textContent = scores[0];
-    puterScore.textContent = scores[1];
-    console.log(scores, score);
+    if (scores[0] == 5 || scores[1] == 5) {
+       
+    }
+    else {
+        pbutton.classList.add('clicked')
+        let score = game(scores, pbutton.id);
+        playerScore.textContent = scores[0];
+        puterScore.textContent = scores[1];
+        console.log(scores, score);
+        window.setTimeout(() => {pbutton.classList.remove("clicked")}, "200")
+    }
 
 };
+
+if (scores[0] == 5 || scores[1] == 5) winner(scores);
+
+function winner(scores) {
+    if (scores[0] > scores[1]) {
+        result.textContent = "You win!";
+    }
+    else if (scores[0] < scores[1]) {
+        result.textContent = "You lose :(";
+    }
+    else {
+        result.textContent = "It's a tie!";
+    }
+    
+};
+
+
+
+
+
 
