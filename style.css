@@ -1,6 +1,16 @@
 body {
     background: purple;
 }
+.header {
+    text-align: center;
+    background:#db9ea8;
+    padding: 1vw;
+}
+.computer {
+    text-align: center;
+    color: white;
+    background: rgb(37, 37, 37);
+}
 .buttons {
     display: flex;
     justify-content: center;

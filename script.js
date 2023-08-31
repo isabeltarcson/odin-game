@@ -6,7 +6,7 @@ const rbutton = document.getElementById("rock");
 const pbutton = document.getElementById("paper");
 const sbutton = document.getElementById("scissor");
 const result = document.getElementById("result");
-
+const puter = document.getElementById("puter");
 let playerScore = document.getElementById("pscore");
 let puterScore = document.getElementById("cscore");
 
@@ -34,12 +34,15 @@ function playerSelection(input, computer) {
     if (computer.includes("Rock") ) {
         if (player.includes("rock")) {
             win = undefined;
+            puter.textContent = "Tie! I picked Rock too >:P"
         }
         else if (player.includes("paper")) {
             win = true;
+            puter.textContent = "Augh you won, I picked rock :P Paper cut"
         }
         else if (player.includes("scissor")) {
             win = false;
+            puter.textContent = "HAHA thats what you get for picking scissors! I picked rock!"
         }
         else {
             console.log("Invalid")
@@ -48,12 +51,15 @@ function playerSelection(input, computer) {
     else if (computer.includes("Paper")) {
         if (player.includes("rock")) {
             win = false;
+            puter.textContent = "Aaaand paper beats rock, every time."
         }
         else if (player.includes("paper")) {
             win = undefined;
+            puter.textContent = "Oops we both picked paper. Stop copying me. "
         }
         else if (player.includes("scissor")) {
             win = true;
+            puter.textContent = "Hey watch where you're pointing those! I guess you won this one :/"
         }
         else {
             console.log("Invalid")
@@ -62,12 +68,15 @@ function playerSelection(input, computer) {
     else {
         if (player.includes("rock")) {
             win = true;
+            puter.textContent = "So when rock beats scissors, is the rock supposed to like destory the scissors?"
         }
         else if (player.includes("paper")) {
             win = true;
+            puter.textContent = "I cut your paper. You're dead now (I picked scissors)"
         }
         else if (player.includes("scissor")) {
             win = undefined;
+            puter.textContent = "...lesbians??"
         }
         else {
             console.log("Invalid")
