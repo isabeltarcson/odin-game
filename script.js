@@ -71,7 +71,7 @@ function playerSelection(input, computer) {
             puter.textContent = "So when rock beats scissors, is the rock supposed to like destory the scissors?"
         }
         else if (player.includes("paper")) {
-            win = true;
+            win = false;
             puter.textContent = "I cut your paper. You're dead now (I picked scissors)"
         }
         else if (player.includes("scissor")) {
