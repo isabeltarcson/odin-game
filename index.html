@@ -7,35 +7,26 @@
     <script src="./script.js"></script>
 </head>
 <body>
-    <script> 
-        const rounds = [1,2,3,4,5];
-        let pscore = 0;
-        let cscore = 0;
-        for (let i = 0; i < rounds.length; i++) {
-            let point = game()
-            switch (point) {
-                case true:
-                    pscore += 1;
-                    break;
-                case false:
-                    cscore += 1;
-                    break;
-                case undefined:
-                    console.log("No point!");
-                    break;
-            }
-            console.log("Player: "+pscore)
-            console.log("Computer: "+cscore)
-        }
-        if (pscore > cscore) {
-            console.log("You win!!!!!!!");
-        }
-        else if (cscore > pscore) {
-            console.log("You lose :()");
-        }
-        else {
-            console.log("It's a tie! It's a boy!")
-        }
+    <div class="buttons">
+        <button class="button" id="rock">Rock</button>
+        <button class="button" id="paper">Paper</button>
+        <button class="button" id="scissor">Scissors</button>
+    </div>
+    <script>
+    let pscore = 0;
+    let cscore = 0;
+    let win = game(pscore, cscore);
+    console.log(win);
+    console.log(win[0], win[1]);
+    if (win[0] > win[1]) {
+        console.log("You win!!!!!!!");
+    }
+    else if (win[0] < win[1]) {
+        console.log("You lose :()");
+    }
+    else {
+        console.log("It's a tie! It's a boy!");
+    }
     </script>
 </body>
 </html>
